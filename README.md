@@ -1,2 +1,2 @@
 # sklearn
-all kmy experience with sklearn (from scratch)
+all my experience with sklearn (from scratch)
