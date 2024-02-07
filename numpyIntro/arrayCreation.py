@@ -20,7 +20,7 @@ zeros = np.zeros((2, 3))
 print(zeros, '\n')
 # for array with only 1 use np.ones()
 
-print('4. Zero array with some splecial size (like another array has)')
+print('4. Zero array with some special size (like another array has)')
 zeros2 = np.zeros_like(arr1)
 print(zeros2, '\n')
 # for array with only 1 use np.ones_like()
@@ -29,4 +29,10 @@ print('5. Unit array')
 # A unit matrix is a square matrix in which all elements on the
 # diagonal have a value of 1 and all others have a value of 0
 uMatrix = np.eye(3)
-print(uMatrix)
+print(uMatrix, '\n')
+
+print('6. Building an array from one number to another with some step')
+array = np.arange(0, 1, 0.1)
+print(array, '\n')
+# Also if you have mistaken (for example incorrect order from 0 to -1 with step 0.1)
+# it won't be shown the mistake but just empty array
