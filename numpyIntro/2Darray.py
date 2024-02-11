@@ -18,11 +18,11 @@ out:
 '''
 
 print('\nGet dimensionality(number of axis) of array')
-print(arr2.ndim)
+print(arr2.ndim)  # 2
 
 print('\nObtain the size of all elements in array')
-print(arr2[0].size)
+print(arr2[0].size)  # 4
 # also count all internal elements (if you write arr2.size output is 8)
 
 print('\nObtain the define size relatively every axis of array')
-print(arr2.shape)
+print(arr2.shape)  # (2, 4)
