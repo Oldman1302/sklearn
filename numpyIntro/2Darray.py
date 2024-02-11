@@ -24,5 +24,5 @@ print('\nObtain the size of all elements in array')
 print(arr2[0].size)
 # also count all internal elements (if you write arr2.size output is 8)
 
-print('\nObrain the define size relatively every axis of array')
+print('\nObtain the define size relatively every axis of array')
 print(arr2.shape)
