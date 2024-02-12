@@ -20,4 +20,11 @@ worse_img = img.reshape(img.shape[0] // 2, 2, img.shape[1] // 2, 2, -1)
 plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
 plt.title('bad quality')
 plt.imshow(worse_img[:, 0, :, 0])
+
+# now let's rotate the array by transpose
+# could be done by np.swapaxes which swap two axes we added in parameters
+t_img = np.swapaxes(img, 0, 1)
+plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
+plt.title('transposition')
+plt.imshow(t_img)
 plt.show()
