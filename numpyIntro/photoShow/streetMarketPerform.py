@@ -27,4 +27,14 @@ t_img = np.swapaxes(img, 0, 1)
 plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
 plt.title('transposition')
 plt.imshow(t_img)
+
+# then create duplicate of our picture with using np.vstack (vertically)
+canvas = np.vstack((img, img))
+plt.figure(num=None, figsize=(15, 15), dpi=80, facecolor='w', edgecolor='k')
+plt.title('vertical merge')
+plt.imshow(canvas)
+# for merging pictures horizontally is used np.hstack (horizontally)
+# * has to mentioned when you merge it's made like deepcopy
+# -> you won't change arrays through other arrays (in parameters)
+
 plt.show()
