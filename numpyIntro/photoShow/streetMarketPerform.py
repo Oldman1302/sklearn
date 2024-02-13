@@ -29,6 +29,7 @@ plt.title('transposition')
 plt.imshow(t_img)
 
 # then create duplicate of our picture with using np.vstack (vertically)
+# vstack is concatenation along the first axis after 1-D arrays of shape (N,) have been reshaped to (1,N)
 canvas = np.vstack((img, img))
 plt.figure(num=None, figsize=(15, 15), dpi=80, facecolor='w', edgecolor='k')
 plt.title('vertical merge')

@@ -22,5 +22,3 @@ print(concate_array, '\n')
 [[  0   1   2   3   4 -10  -9  -8  -7  -6]
  [  5   6   7   8   9  -5  -4  -3  -2  -1]]
 '''
-
-# vstack is concatenation along the first axis after 1-D arrays of shape (N,) have been reshaped to (1,N)
