@@ -38,4 +38,7 @@ plt.imshow(canvas)
 # * has to mentioned when you merge it's made like deepcopy
 # -> you won't change arrays through other arrays (in parameters)
 
-plt.show()
+'''duplicate_photo = np.repeat(worse_img[:, 0, :, 0], 2)  # instantly 1D array
+print(duplicate_photo)
+print(duplicate_photo.shape)
+plt.show()'''
