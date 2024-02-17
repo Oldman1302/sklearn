@@ -16,14 +16,14 @@ plt.imshow(img)
 # then I'm going to decrease the resolution of picture
 # ! Поменяв форму массива, мы получили 2 новые оси, по 2 значения в каждой, им
 # соответствуют кадры, составленные из нечетных и четных строк и столбцов исходного изображения
-worse_img = img.reshape(img.shape[0] // 2, 2, img.shape[1] // 2, 2, -1)
+worse_img = img.reshape(img.shape[0] // 2, 2, img.shape[1] // 2, 2, -1)[:, 0, :, 0]
 plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
 plt.title('bad quality')
-plt.imshow(worse_img[:, 0, :, 0])
+plt.imshow(worse_img)
 
 # now let's rotate the array by transpose
 # could be done by np.swapaxes which swap two axes we added in parameters
-t_img = np.swapaxes(img, 0, 1)
+t_img = np.transpose(img, (1, 0, 2))
 plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
 plt.title('transposition')
 plt.imshow(t_img)
@@ -38,7 +38,19 @@ plt.imshow(canvas)
 # * has to mentioned when you merge it's made like deepcopy
 # -> you won't change arrays through other arrays (in parameters)
 
-'''duplicate_photo = np.repeat(worse_img[:, 0, :, 0], 2)  # instantly 1D array
-print(duplicate_photo)
-print(duplicate_photo.shape)
-plt.show()'''
+# instantly 1D array
+# now it has only one axis -> has to be divided by axis
+# it's stretch the picture on some axis
+# ,or we could use np.stack + np.transpose
+stretch_photo = np.repeat(worse_img, 2)
+stretch_photo = stretch_photo.reshape(worse_img.shape[0], worse_img.shape[1], worse_img.shape[2], -1)
+print(worse_img.shape)
+print(stretch_photo.shape)
+stretch_photo = np.transpose(stretch_photo, (0, 3, 1, 2))
+print("\n!!!\n", stretch_photo.shape)
+stretch_photo = stretch_photo.reshape(-1, worse_img.shape[1], worse_img.shape[2])
+plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')
+plt.title('stretch')
+plt.imshow(stretch_photo)
+
+plt.show()
