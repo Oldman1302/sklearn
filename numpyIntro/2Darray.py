@@ -1,7 +1,7 @@
 # here are some interesting 2D+ numpy arrays features
 import numpy as np
 
-arr2 = np.array([[1, 2, 3, 4],
+arr2 = np.array([[10, 2, 3, 4],
                 [5, 6, 7, 8]])
 
 print('Basement\n', arr2)
@@ -26,3 +26,11 @@ print(arr2[0].size)  # 4
 
 print('\nObtain the define size relatively every axis of array')
 print(arr2.shape)  # (2, 4)
+
+print('\nObtain the minimum number relatively to every row of array')
+#            array    relatively to which axis (1 means it will find minimum in every subarray with index [: i]
+print(np.min(arr2, 1))  # [2 5]
+
+# !!! Find differences between average and mean
+print('\nObtain the  number relatively to every column of array')
+print(np.mean(arr2, 0))  # [7.5 4.  5.  6. ]
