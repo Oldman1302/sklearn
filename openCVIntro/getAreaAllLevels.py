@@ -26,7 +26,6 @@ def grayscale_17_levels(img):
             # cv2. inRange() finds from gray pixels which are brighter than lower and grayer than higher
             curr_mask = cv2.inRange(image, lower, higher)
             image[curr_mask > 0] = 0
-            print(img)
         # ret - minimum which was used for binarization (initially 240)
         ret, threshold = cv2.threshold(image, low, 255, 0)
         # list of contours and their hierarchy
